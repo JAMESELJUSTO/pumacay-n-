@@ -8,7 +8,7 @@
 /* Estilo del cuerpo de la página */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background: linear-gradient(to bottom, #87CEEB, #00BFFF); /* Fondo de cielo azul */
     color: #333;
 }
 
@@ -21,12 +21,13 @@ header {
     color: white;
     text-align: center;
     padding-top: 150px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 header h1 {
     font-size: 4em;
     margin-bottom: 20px;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
 header p {
@@ -36,18 +37,19 @@ header p {
 }
 
 header button {
-    background-color: #008080;
+    background-color: #32CD32;
     color: white;
     padding: 12px 30px;
     font-size: 1.2em;
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 header button:hover {
-    background-color: #004d47;
+    background-color: #006400;
+    transform: scale(1.1);
 }
 
 /* Sección general de contenido */
@@ -56,7 +58,7 @@ header button:hover {
     padding: 50px;
     margin: 20px auto;
     width: 80%;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
@@ -78,11 +80,12 @@ header button:hover {
 
 /* Footer */
 footer {
-    background-color: #008080;
+    background-color: #2E8B57;
     color: white;
     text-align: center;
     padding: 20px;
     margin-top: 30px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
 }
 
 footer p {
@@ -91,13 +94,13 @@ footer p {
 
 /* Efectos para las secciones */
 section {
-    background-color: #e8f5e9;
+    background-color: #f0f8ff;
     padding: 80px 0;
 }
 
 section h2 {
     font-size: 2.5em;
-    color: #00695c;
+    color: #008B8B;
     margin-bottom: 20px;
 }
 
@@ -107,7 +110,23 @@ section p {
     line-height: 1.8;
 }
 
-/* Transiciones para imágenes y efectos */
+/* Estilo para el botón de interacción */
+button {
+    background-color: #87CEEB;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4682B4;
+    transform: scale(1.1);
+}
+
 .fade-in {
     animation: fadeIn 2s ease-in;
 }
@@ -120,5 +139,3 @@ section p {
         opacity: 1;
     }
 }
-
-
