@@ -1,20 +1,78 @@
-// Botón "Descubre más" con acción
-document.getElementById("btn-info").addEventListener("click", function() {
-    alert("¡Gracias por interesarte en Pumacayán! Pronto habrá más información disponible.");
-});
+// Esperar a que todo el contenido se cargue antes de ejecutar el código
+document.addEventListener("DOMContentLoaded", () => {
 
-// Animación de la imagen al hacer scroll
-window.addEventListener('scroll', function() {
+    // Acción del botón de información con animación y mensaje
+    const btnInfo = document.getElementById("btn-info");
+    btnInfo.addEventListener("click", function() {
+        // Cambiar el color del botón para indicar clic
+        this.style.backgroundColor = "#32CD32"; // Color verde cuando se hace clic
+        this.innerHTML = "Gracias por Explorar"; // Cambiar texto en el botón
+
+        // Retornar el color original del botón después de 1 segundo
+        setTimeout(() => {
+            this.style.backgroundColor = "#87CEEB"; // Vuelve al color inicial
+            this.innerHTML = "Explora Pumacayán";
+        }, 1000);
+
+        // Mostrar un mensaje de agradecimiento con un retraso
+        setTimeout(() => {
+            alert("¡Gracias por explorar Pumacayán! Pronto más información será añadida.");
+        }, 500);
+    });
+
+    // Función para detectar si un elemento está visible en el viewport (pantalla)
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+    }
+
+    // Animación de imágenes al hacer scroll
     const images = document.querySelectorAll('img');
-    images.forEach(image => {
-        if (isInViewport(image)) {
-            image.classList.add('fade-in');
-        }
+    window.addEventListener('scroll', function() {
+        images.forEach(image => {
+            if (isInViewport(image)) {
+                image.classList.add('fade-in'); // Añadir animación cuando la imagen esté en el viewport
+            }
+        });
+    });
+
+    // Función para animar el desplazamiento suave al hacer clic en un enlace interno
+    const scrollLinks = document.querySelectorAll('a[href^="#"]');
+    scrollLinks.forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    });
+
+    // Efecto de clic bonito para botones
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(button => {
+        button.addEventListener("mousedown", function() {
+            this.style.transform = "scale(0.95)"; // Efecto de reducción al hacer clic
+        });
+        button.addEventListener("mouseup", function() {
+            this.style.transform = "scale(1)"; // Vuelve a su tamaño original
+        });
+        button.addEventListener("mouseleave", function() {
+            this.style.transform = "scale(1)"; // Asegura que el botón vuelve a su tamaño cuando el mouse sale
+        });
+    });
+
+    // Efecto de cambio de color al pasar el ratón sobre los botones
+    buttons.forEach(button => {
+        button.addEventListener("mouseenter", function() {
+            this.style.backgroundColor = "#4682B4"; // Cambia el color cuando el ratón pasa por encima
+            this.style.cursor = "pointer"; // Muestra el puntero de clic
+        });
+        button.addEventListener("mouseleave", function() {
+            this.style.backgroundColor = "#87CEEB"; // Vuelve al color original
+        });
     });
 });
 
-// Función para verificar si la imagen está en el área visible
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top >= 0 && rect.bottom <= window.innerHeight;
-}
