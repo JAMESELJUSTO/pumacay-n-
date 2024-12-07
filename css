@@ -9,18 +9,22 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-image: url('https://scontent.ftru2-2.fna.fbcdn.net/v/t1.6435-9/83589502_1216241128574559_1615718270998937600_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeETvTWElcEWgdxmKtGS7kHUL8uAh0XeVwsvy4CHRd5XCycY2YE__mQD_TQud-xe_0ogN7krJjDSFvUsB5ACmWVm&_nc_ohc=8VFY2AQkl-4Q7kNvgG7blMe&_nc_zt=23&_nc_ht=scontent.ftru2-2.fna&_nc_gid=AL6qKMCrD0B37QPGy_LX3T2&oh=00_AYC21LwehpceNQfi9pEy5csHXL2JG-vsm8ZBUVMt_EZeIg&oe=677B465E');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
     margin: 0;
     padding: 0;
 }
 
 /* Header styles */
 header {
-    background-color: #004d00;
+    background-color: rgba(0, 77, 0, 0.7); /* Fondo oscuro para el header */
     color: white;
     text-align: center;
     padding: 40px 20px;
+    border-radius: 8px;
 }
 
 header h1 {
@@ -35,7 +39,7 @@ header p {
 section {
     margin: 20px;
     padding: 20px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
